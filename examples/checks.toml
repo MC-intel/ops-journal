@@ -1,0 +1,35 @@
+# ops-journal check -> exit code is the number of failures > 0 ? 1 : 0
+
+[[check]]
+name = "backup is fresh"
+type = "file_age"
+dir = "~/backups/my-repo"
+glob = "*.bundle"
+max_age_hours = 30
+
+[[check]]
+name = "backup disk mounted"
+type = "mount"
+path = "/mnt/backup"
+
+[[check]]
+name = "api answers"
+type = "http"
+url = "http://127.0.0.1:8080/health"
+
+[[check]]
+name = "database port"
+type = "tcp"
+host = "127.0.0.1"
+port = 5432
+
+[[check]]
+name = "service unit active"
+type = "command"
+argv = ["systemctl", "is-active", "--quiet", "my-service"]
+
+[[check]]
+name = "somebody is logging changes"
+type = "journal_fresh"
+path = "~/ops/journal.md"
+max_age_days = 14
