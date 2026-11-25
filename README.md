@@ -9,6 +9,12 @@ Two small tools for people who run shared systems:
 
 Standard library only. Python >= 3.11.
 
+## Where this came from
+
+I ran this for real: one change log shared by two AI coding assistants on two machines, which could not see each
+other's terminals. Every feature below is a scar from that: a wrong-timezone stamp, an alert attributed to the
+wrong machine, a log that must never hold a credential. See [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md).
+
 ## The journal
 
 ```sh
